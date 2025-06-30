@@ -26,14 +26,34 @@ try {
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
+      --background: hsl(0, 0%, 100%);
+      --foreground: hsl(222, 84%, 4.9%);
+      --muted: hsl(210, 40%, 98%);
+      --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+      --border: hsl(214.3, 31.8%, 91.4%);
+      --primary: hsl(158, 64%, 52%);
+      --primary-foreground: hsl(210, 40%, 98%);
       --brand-green: hsl(158, 64%, 52%);
       --brand-green-dark: hsl(158, 64%, 42%);
       --brand-black: hsl(222, 84%, 4.9%);
       --brand-black-light: hsl(222, 47%, 11%);
     }
     
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
       font-family: "Inter", sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.5;
+    }
+    
+    html {
+      scroll-behavior: smooth;
     }
     
     .hero-bg {
@@ -80,6 +100,37 @@ try {
     }
     
     .scroll-smooth { scroll-behavior: smooth; }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .animate-delay-200 {
+      animation-delay: 0.2s;
+      animation-fill-mode: both;
+    }
+    
+    .animate-delay-400 {
+      animation-delay: 0.4s;
+      animation-fill-mode: both;
+    }
+    
+    .animate-delay-600 {
+      animation-delay: 0.6s;
+      animation-fill-mode: both;
+    }
   </style>
 </head>
 <body>

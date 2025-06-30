@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node build-static.js",
+  "buildCommand": "node force-original-deploy.js",
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": null,

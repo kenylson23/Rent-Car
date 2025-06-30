@@ -3,7 +3,6 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
 import { z } from "zod";
 import { MapPin, Phone, Mail, Clock, Send, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +11,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
 
 const contactFormSchema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),
@@ -44,51 +42,39 @@ export default function ContactSection() {
     },
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      return await apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: (response, variables) => {
-      // Construir mensagem para WhatsApp
-      const message = `Olá! Gostaria de fazer uma reserva na Kenylson Rent-Car:
+  const handleWhatsAppRedirect = (data: ContactFormData) => {
+    // Construir mensagem para WhatsApp
+    const message = `Olá! Gostaria de fazer uma reserva na Kenylson Rent-Car:
 
 📝 *Dados da Reserva:*
-• Nome: ${variables.name}
-• Email: ${variables.email}
-• Telefone: ${variables.phone}
-• Data de Retirada: ${variables.pickupDate}
-• Data de Devolução: ${variables.returnDate}
-• Tipo de Veículo: ${variables.carType}
-${variables.message ? `• Mensagem: ${variables.message}` : ''}
+• Nome: ${data.name}
+• Email: ${data.email}
+• Telefone: ${data.phone}
+• Data de Retirada: ${data.pickupDate}
+• Data de Devolução: ${data.returnDate}
+• Tipo de Veículo: ${data.carType}
+${data.message ? `• Mensagem: ${data.message}` : ''}
 
 Aguardo retorno para finalizar a reserva. Obrigado!`;
 
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/244949639932?text=${encodedMessage}`;
-      
-      toast({
-        title: "Sucesso!",
-        description: "Redirecionando para WhatsApp para finalizar sua reserva...",
-      });
-      
-      // Aguardar um pouco para mostrar o toast e então redirecionar
-      setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-      }, 1500);
-      
-      form.reset();
-    },
-    onError: (error) => {
-      toast({
-        variant: "destructive",
-        title: "Erro",
-        description: "Erro ao enviar solicitação. Tente novamente.",
-      });
-    },
-  });
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/244949639932?text=${encodedMessage}`;
+    
+    toast({
+      title: "Sucesso!",
+      description: "Redirecionando para WhatsApp para finalizar sua reserva...",
+    });
+    
+    // Aguardar um pouco para mostrar o toast e então redirecionar
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+    }, 1500);
+    
+    form.reset();
+  };
 
   const onSubmit = (data: ContactFormData) => {
-    contactMutation.mutate(data);
+    handleWhatsAppRedirect(data);
   };
 
   return (
@@ -238,10 +224,9 @@ Aguardo retorno para finalizar a reserva. Obrigado!`;
                   <Button 
                     type="submit" 
                     className="btn-primary text-white px-8 py-4 rounded-lg font-semibold w-full transition-all duration-300"
-                    disabled={contactMutation.isPending}
                   >
                     <Send className="mr-2" size={20} />
-                    {contactMutation.isPending ? "Enviando..." : "Enviar Solicitação"}
+                    Enviar Solicitação
                   </Button>
                 </form>
               </Form>

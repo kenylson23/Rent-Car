@@ -108,6 +108,7 @@ This is a modern car rental web application built with React and Express.js, fea
 
 - June 30, 2025. Initial setup
 - June 30, 2025. Adapted to Angolan context - updated contact information to Luanda address, converted pricing to Kwanza, integrated WhatsApp booking system (+244 949639932) with automatic form data transfer
+- June 30, 2025. Prepared for static Vercel deployment - removed backend dependencies, created standalone client build configuration, optimized for static hosting
 
 ## User Preferences
 
@@ -115,3 +116,4 @@ Preferred communication style: Simple, everyday language.
 Target market: Angola (Luanda)
 WhatsApp integration: All reservations should redirect to +244 949639932 with complete form data
 Currency: Angolan Kwanza (Kz)
+Deployment preference: Static site on Vercel

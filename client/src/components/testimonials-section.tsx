@@ -5,22 +5,22 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Carlos Silva",
+    name: "António Mendes",
     role: "Empresário",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150",
-    text: "Serviço excepcional! O carro estava impecável e o atendimento foi profissional do início ao fim. Recomendo a Kenylson para quem busca qualidade."
+    text: "Serviço excepcional em Luanda! O carro estava impecável e o atendimento foi profissional do início ao fim. Recomendo a Kenylson para quem busca qualidade em Angola."
   },
   {
-    name: "Ana Santos",
+    name: "Maria João",
     role: "Advogada",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150",
-    text: "Já aluguei carros em várias empresas, mas a Kenylson se destaca pela transparência nos preços e pela qualidade dos veículos. Virei cliente fiel!"
+    text: "Já aluguei carros em várias empresas em Luanda, mas a Kenylson se destaca pela transparência nos preços e pela qualidade dos veículos. Virei cliente fiel!"
   },
   {
-    name: "Roberto Lima",
+    name: "Dr. Paulo Afonso",
     role: "Médico",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150",
-    text: "O atendimento 24h salvou minha viagem! Tive um pequeno problema e foram super rápidos para resolver. Empresa de confiança total."
+    text: "O atendimento 24h salvou minha viagem por Angola! Tive um pequeno problema e foram super rápidos para resolver. Empresa de confiança total."
   }
 ];
 

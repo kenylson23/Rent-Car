@@ -65,15 +65,15 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center">
                 <MapPin className="text-brand-green mr-2" size={16} />
-                <span className="text-sm">Av. Paulista, 1000 - São Paulo, SP</span>
+                <span className="text-sm">Rua Amílcar Cabral, 85 - Luanda, Angola</span>
               </li>
               <li className="flex items-center">
                 <Phone className="text-brand-green mr-2" size={16} />
-                <span className="text-sm">(11) 9999-8888</span>
+                <span className="text-sm">+244 949 639 932</span>
               </li>
               <li className="flex items-center">
                 <Mail className="text-brand-green mr-2" size={16} />
-                <span className="text-sm">contato@kenylsonrentcar.com</span>
+                <span className="text-sm">info@kenylsonrentcar.ao</span>
               </li>
             </ul>
           </div>

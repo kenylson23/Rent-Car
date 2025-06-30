@@ -29,8 +29,8 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            Experimente o luxo e conforto com nossa frota exclusiva de veículos premium. 
-            Atendimento personalizado para uma experiência inesquecível.
+            Experimente o luxo e conforto com nossa frota exclusiva de veículos premium em Luanda. 
+            Atendimento personalizado para uma experiência inesquecível em Angola.
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"

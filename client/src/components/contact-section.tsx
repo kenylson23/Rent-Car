@@ -48,11 +48,34 @@ export default function ContactSection() {
     mutationFn: async (data: ContactFormData) => {
       return await apiRequest("POST", "/api/contact", data);
     },
-    onSuccess: () => {
+    onSuccess: (response, variables) => {
+      // Construir mensagem para WhatsApp
+      const message = `Olá! Gostaria de fazer uma reserva na Kenylson Rent-Car:
+
+📝 *Dados da Reserva:*
+• Nome: ${variables.name}
+• Email: ${variables.email}
+• Telefone: ${variables.phone}
+• Data de Retirada: ${variables.pickupDate}
+• Data de Devolução: ${variables.returnDate}
+• Tipo de Veículo: ${variables.carType}
+${variables.message ? `• Mensagem: ${variables.message}` : ''}
+
+Aguardo retorno para finalizar a reserva. Obrigado!`;
+
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/244949639932?text=${encodedMessage}`;
+      
       toast({
         title: "Sucesso!",
-        description: "Sua solicitação foi enviada com sucesso. Entraremos em contato em breve.",
+        description: "Redirecionando para WhatsApp para finalizar sua reserva...",
       });
+      
+      // Aguardar um pouco para mostrar o toast e então redirecionar
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 1500);
+      
       form.reset();
     },
     onError: (error) => {
@@ -241,7 +264,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-semibold">Endereço</h4>
-                      <p>Av. Paulista, 1000 - São Paulo, SP</p>
+                      <p>Rua Amílcar Cabral, 85 - Luanda, Angola</p>
                     </div>
                   </div>
                   
@@ -251,7 +274,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-semibold">Telefone</h4>
-                      <p>(11) 9999-8888</p>
+                      <p>+244 949 639 932</p>
                     </div>
                   </div>
                   
@@ -261,7 +284,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-semibold">E-mail</h4>
-                      <p>contato@kenylsonrentcar.com</p>
+                      <p>info@kenylsonrentcar.ao</p>
                     </div>
                   </div>
                   

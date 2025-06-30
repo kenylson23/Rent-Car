@@ -6,7 +6,7 @@ import { Users, Settings, Snowflake, Leaf, Zap, Construction, Gauge, Star, Wifi,
 const cars = [
   {
     name: "Sedan Executivo",
-    price: "R$ 180/dia",
+    price: "85.000 Kz/dia",
     description: "Perfeito para executivos e ocasiões especiais. Conforto e elegância em cada detalhe.",
     image: "https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
     features: [
@@ -17,7 +17,7 @@ const cars = [
   },
   {
     name: "SUV Premium",
-    price: "R$ 220/dia",
+    price: "105.000 Kz/dia",
     description: "Ideal para famílias e viagens. Espaço, segurança e performance em um só veículo.",
     image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
     features: [
@@ -28,7 +28,7 @@ const cars = [
   },
   {
     name: "Compacto Econômico",
-    price: "R$ 120/dia",
+    price: "58.000 Kz/dia",
     description: "Economia e praticidade para o dia a dia. Perfeito para a cidade e viagens curtas.",
     image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
     features: [
@@ -39,7 +39,7 @@ const cars = [
   },
   {
     name: "Esportivo Luxury",
-    price: "R$ 350/dia",
+    price: "165.000 Kz/dia",
     description: "Para ocasiões especiais que merecem um carro único. Potência e sofisticação.",
     image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
     features: [
@@ -50,7 +50,7 @@ const cars = [
   },
   {
     name: "Van Executiva",
-    price: "R$ 280/dia",
+    price: "135.000 Kz/dia",
     description: "Máximo conforto para grupos grandes. Ideal para viagens corporativas e familiares.",
     image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
     features: [
@@ -61,7 +61,7 @@ const cars = [
   },
   {
     name: "Elétrico Eco",
-    price: "R$ 200/dia",
+    price: "95.000 Kz/dia",
     description: "Sustentabilidade e tecnologia avançada. O futuro da mobilidade disponível hoje.",
     image: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
     features: [

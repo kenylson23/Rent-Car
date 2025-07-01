@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node fix-vercel-deployment.js",
+  "buildCommand": "node force-vercel-update.js",
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": null,

@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node force-original-deploy.js",
+  "buildCommand": "node fix-vercel-deployment.js",
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": null,
